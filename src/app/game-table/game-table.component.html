@@ -1,0 +1,7 @@
+<div style="border-right: 1px solid #ccc; border-bottom: 1px solid #ccc;">
+    <div *ngFor="let rows of table; let i = index;" class="row-layout-start">
+        <div [ngClass]=" (i+j)%2 === 0 ? 'green-cell' : 'gray-cell'" class="table-cell" *ngFor="let columns of rows; let j = index;">
+            {{columns}}
+        </div>
+    </div>
+</div>

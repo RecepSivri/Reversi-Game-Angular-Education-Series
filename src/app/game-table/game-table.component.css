@@ -1,0 +1,23 @@
+.table-cell{
+    border-top: 1px solid #cccccc; 
+    border-left: 1px solid #cccccc;
+    width: 60px; 
+    height: 60px; 
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.green-cell{
+    background-color: #7d945d;
+}
+
+.gray-cell{
+    background-color: #eeeed5;
+}
+
+.table-cell:hover{
+    background-color: #d74840;
+}
