@@ -1,4 +1,27 @@
 <div class="full-screen column-layout-start-center">
-  <app-game-table></app-game-table>
-  <app-score-board></app-score-board>
+  <div style="height:70px; width: 100%; background-color: #212121; margin-bottom:40px;">
+  <img src="../assets/tech-club.png" height="70px;">
+  </div>
+  <div #gameTable>
+    <app-game-table 
+    #gameTableComponent
+      (showTurnExceptionComputer) ="setExceptionFlagComputer($event)" 
+      (showTurnExceptionPlayer)="setExceptionFlagPlayer($event)" 
+      (finishGame) = "finishGamePlay($event)"
+      (returnScoreBoard) = "setScoreBoard($event)">
+    </app-game-table>
+  </div>
+  
+  <app-score-board [score] = "gameScore"></app-score-board>
+  <div *ngIf = "playFlag">You can not play, computer's turn!</div>
+  <div *ngIf = "computerFlag">Computer can not play, your turn!</div>
+</div>
+
+<div *ngIf="showShadow" class="shadow-screen"></div>
+<div *ngIf="showInfo" class="info-screen">
+  <div class="row-layout-center-center full-width">
+    <div class="column-layout-center-center">
+        <p style="font-size: 40px; color: #7d945d;">{{playerStatus}}</p>
+      <div (click) = "playAgain()" class="play-again">Play Again?</div>
+   </div>
 </div>

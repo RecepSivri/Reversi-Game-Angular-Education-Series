@@ -1,7 +1,9 @@
-<div style="border-right: 1px solid #ccc; border-bottom: 1px solid #ccc;">
+<div class="out-table-style">
     <div *ngFor="let rows of table; let i = index;" class="row-layout-start">
-        <div [ngClass]=" (i+j)%2 === 0 ? 'green-cell' : 'gray-cell'" class="table-cell" *ngFor="let columns of rows; let j = index;">
-            {{columns}}
+        <div [ngClass]="[(i+j)%2 === 0 ? 'green-cell' : 'gray-cell', table[i][j].selected ? 'table-cell-selected' : '']" (click) = "cellSelected(i,j)"
+         class="table-cell" *ngFor="let columns of rows; let j = index;">
+           <img *ngIf = "columns.value === 'X'" src="../../assets/black-piece.png" width="80%" height="80%">
+           <img *ngIf = "columns.value === 'O'" src="../../assets/white-piece.png" width="80%" height="80%">
         </div>
     </div>
 </div>

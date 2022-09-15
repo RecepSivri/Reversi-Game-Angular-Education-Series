@@ -21,3 +21,12 @@
 .table-cell:hover{
     background-color: #d74840;
 }
+
+.table-cell-selected{
+    background-color: #d74840;   
+}
+
+.out-table-style{
+    border-right: 1px solid #ccc; 
+    border-bottom: 1px solid #ccc;
+}
